@@ -17,13 +17,10 @@ RUN curl -fLo /root/.vim/autoload/plug.vim --create-dirs \
 
 # Install vim plugins with vim-plug
 # when some plugin fails to install, continue with the rest of the Dockerfile
-# (this is useful for plugins that are not available on Alpine or for plugins
-# that require some extra installation steps)
+# (this is useful for plugins that require some extra installation steps)
 RUN vim -es -u /root/.vimrc -i NONE -c "PlugInstall" -c "qa" || true
 
 # Set working directory to /work
 WORKDIR /work
 
 ENV TERM xterm-256color
-
-# TESATAFASDYTASFDVYTADFSV
